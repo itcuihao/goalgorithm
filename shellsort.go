@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	s := []int{1, 3, 4, 6, 2, 9, 5, 8, 7}
+	s := []int{1, 3, 10, 4, 6, 2, 9, 5, 8, 7}
 	shellsort(s)
 	fmt.Println(s)
 }
