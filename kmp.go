@@ -1,4 +1,6 @@
 // Knuth–Morris–Pratt (KMP) in Golang
+
+// 解释：http://www.matrix67.com/blog/archives/115
 package main
  
 import (
