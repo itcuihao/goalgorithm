@@ -38,4 +38,11 @@ func main() {
 	//  Contains vs ContainsAny
 	fmt.Println(strings.ContainsAny("Shell-12541", "1-2")) // true
 	fmt.Println(strings.Contains("Shell-12541", "1-2"))    // false
+
+	fmt.Println("---ContainsAny---")
+	testString := "Australia is a country and continent surrounded by the Indian and Pacific oceans."
+	testArray := strings.Fields(testString)
+	for _, v := range testArray {
+		fmt.Println(v)
+	}
 }
