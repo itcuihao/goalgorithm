@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode"
 )
 
 func main() {
@@ -39,10 +40,30 @@ func main() {
 	fmt.Println(strings.ContainsAny("Shell-12541", "1-2")) // true
 	fmt.Println(strings.Contains("Shell-12541", "1-2"))    // false
 
-	fmt.Println("---ContainsAny---")
+	fmt.Println("---Fields---")
 	testString := "Australia is a country and continent surrounded by the Indian and Pacific oceans."
 	testArray := strings.Fields(testString)
 	for _, v := range testArray {
 		fmt.Println(v)
+	}
+
+	fmt.Println("---FieldsFunc---")
+	x := func(c rune) bool {
+		return !unicode.IsLetter(c)
+	}
+	strArray := strings.FieldsFunc(`Australia major cities – Sydney, Brisbane,
+									 Melbourne, Perth, Adelaide – are coastal`, x)
+	for _, v := range strArray {
+		fmt.Println(v)
+	}
+
+	fmt.Println("\n*****************Split by number*******************\n")
+
+	y := func(c rune) bool {
+		return unicode.IsNumber(c)
+	}
+	testff := strings.FieldsFunc(`1 Sydney Opera House.2 Great Barrier Reef.3 Uluru-Kata Tjuta National Park.4 Sydney Harbour Bridge.5 Blue Mountains National Park.6 Melbourne.7 Bondi Beach`, y)
+	for _, w := range testff {
+		fmt.Println(w)
 	}
 }
