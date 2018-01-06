@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// defer是在函数末尾的return前执行，先进后执行，具体见问题1。
+// 函数调用时 int 参数发生值拷贝。
+
 func calc(i string, a, b int) int {
 	r := a + b
 	fmt.Println(i, a, b, r)
