@@ -79,4 +79,13 @@ func main() {
 	fmt.Println(strings.HasSuffix("Australia", "LIA"))
 	fmt.Println(strings.HasSuffix("123456", "456"))
 	fmt.Println(strings.HasSuffix("Australia", ""))
+	
+	fmt.Println("---Index---")
+	fmt.Println(strings.Index("Australia", "Aus"))
+	fmt.Println(strings.Index("Australia", "aus"))
+	fmt.Println(strings.Index("Australia", "A"))
+	fmt.Println(strings.Index("Australia", "a"))
+	fmt.Println(strings.Index("Australia", "Jap"))
+	fmt.Println(strings.Index("Japan-124", "-"))
+	fmt.Println(strings.Index("Japan-124", ""))
 }
