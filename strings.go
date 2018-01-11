@@ -95,4 +95,18 @@ func main() {
 	fmt.Println(strings.IndexAny("mobile", "one"))     // o position
 	fmt.Println(strings.IndexAny("123456789", "4"))    // 4 position
 	fmt.Println(strings.IndexAny("123456789", "0"))    // 0 position
+	
+	
+	fmt.Println("---IndexByte---")
+	var s,t,u byte  
+	t = 'l'
+	fmt.Println(strings.IndexByte("australia",t))
+	fmt.Println(strings.IndexByte("LONDON",t))
+	fmt.Println(strings.IndexByte("JAPAN",t))
+	 
+	s = 1
+	fmt.Println(strings.IndexByte("5221-JAPAN",s))
+   
+	u = '1'
+	fmt.Println(strings.IndexByte("5221-JAPAN",u))
 }
