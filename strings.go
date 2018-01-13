@@ -95,18 +95,30 @@ func main() {
 	fmt.Println(strings.IndexAny("mobile", "one"))     // o position
 	fmt.Println(strings.IndexAny("123456789", "4"))    // 4 position
 	fmt.Println(strings.IndexAny("123456789", "0"))    // 0 position
-	
-	
+
 	fmt.Println("---IndexByte---")
-	var s,t,u byte  
+	var s, t, u byte
 	t = 'l'
-	fmt.Println(strings.IndexByte("australia",t))
-	fmt.Println(strings.IndexByte("LONDON",t))
-	fmt.Println(strings.IndexByte("JAPAN",t))
-	 
+	fmt.Println(strings.IndexByte("australia", t))
+	fmt.Println(strings.IndexByte("LONDON", t))
+	fmt.Println(strings.IndexByte("JAPAN", t))
+
 	s = 1
-	fmt.Println(strings.IndexByte("5221-JAPAN",s))
-   
+	fmt.Println(strings.IndexByte("5221-JAPAN", s))
+
 	u = '1'
-	fmt.Println(strings.IndexByte("5221-JAPAN",u))
+	fmt.Println(strings.IndexByte("5221-JAPAN", u))
+
+	fmt.Println("---IndexRune---")
+	var rs, rt, ru rune
+	rt = 'l'
+	fmt.Println(strings.IndexRune("australia", rt))
+	fmt.Println(strings.IndexRune("LONDON", rt))
+	fmt.Println(strings.IndexRune("JAPAN", rt))
+
+	rs = 1
+	fmt.Println(strings.IndexRune("5221-JAPAN", rs))
+
+	ru = '1'
+	fmt.Println(strings.IndexRune("5221-JAPAN", ru))
 }
