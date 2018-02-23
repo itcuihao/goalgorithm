@@ -1,4 +1,4 @@
-package b03
+package s03
 
 func run(a [][]int, k int) bool {
 	if len(a) == 0 {
