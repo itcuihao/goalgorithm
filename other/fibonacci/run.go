@@ -1,6 +1,7 @@
 package fibonacci
 
-func f(n int) int {
+// 递归
+func fRecursive(n int) int {
 	if n == 0 || n == 1 {
 		return n
 	}
@@ -8,7 +9,8 @@ func f(n int) int {
 	return f(n-1) + f(n-2)
 }
 
-func fRecursive(n int) int {
+// 非递归
+func f(n int) int {
 	if n == 0 || n == 1 {
 		return n
 	}
