@@ -10,7 +10,7 @@ func merge(a, b []int) []int {
 
 	c := make([]int, 0, la+lb)
 
-	for i != la && j != lb {
+	for i < la && j < lb {
 
 		fmt.Println("i:j--", i, j)
 		if a[i] > b[j] {
