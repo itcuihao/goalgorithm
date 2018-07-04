@@ -33,6 +33,20 @@ func generateSlice(size int) []int {
 
 func bubblesort(items []int) {
 	var (
+		n = len(items)
+	)
+	for n > 0 {
+		for i := 0; i < n-1; i++ {
+			if items[i] > items[i+1] {
+				items[i+1], items[i] = items[i], items[i+1]
+			}
+		}
+		n = n - 1
+		fmt.Println(items)
+	}
+}
+func bubblesort1(items []int) {
+	var (
 		n      = len(items)
 		sorted = false
 	)
