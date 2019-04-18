@@ -1,5 +1,5 @@
 # go-algorithm
 
-* www.golangprograms.com 程序
-* 剑指Offer习题
+* www.golangprograms.com 算法程序
 
+* 记录经典算法
