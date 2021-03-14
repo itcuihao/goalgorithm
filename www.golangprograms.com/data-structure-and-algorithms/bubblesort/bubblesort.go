@@ -45,6 +45,7 @@ func bubblesort(items []int) {
 		fmt.Println(items)
 	}
 }
+
 func bubblesort1(items []int) {
 	var (
 		n      = len(items)
