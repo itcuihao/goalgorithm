@@ -9,3 +9,7 @@ func TestRun(t *testing.T) {
 	b := []int{2, 3, 5, 7}
 	t.Log(merge(a, b))
 }
+
+func TestMaxNum(t *testing.T) {
+	maxNum()
+}
