@@ -29,32 +29,27 @@ func search(nums []int) int {
 	if len(nums) == 1 {
 		return nums[0]
 	}
-	l := len(nums)
-	s, e := 0, l
+	s, e := 0, len(nums)
 	for s < e {
-		m := (s + e) / 2
-
-		n1 := nums[s:m]
-		n1l := len(n1)
-		n2 := nums[m:]
-		n2l := len(n2)
-		if nums[m] != nums[m-1] && nums[m] != nums[m+1] {
-			return nums[m]
+		k := s + (e-s)/2
+		n1 := nums[:k]
+		fmt.Println("k", k)
+		fmt.Println("n1", n1)
+		if sum(n1)%2 == 1 {
+			e = k
 		}
-		if nums[m] == nums[m-1] {
-			if n1l%2 == 0 {
-				s = m
-			} else {
-				e = m - 1
-			}
+		if sum(n1)%2 == 0 {
+			s = k
 		}
-		if nums[m] == nums[m+1] {
-			if n2l%2 == 0 {
-				s = m + 1
-			} else {
-				s = m
-			}
-		}
+		fmt.Println("se", s, e)
 	}
-	return -1
+	return nums[e]
+}
+
+func sum(nums []int) int {
+	s := 0
+	for i := 0; i < len(nums); i++ {
+		s += nums[i]
+	}
+	return s
 }
