@@ -32,16 +32,19 @@ func search(nums []int) int {
 	s, e := 0, len(nums)
 	for s < e {
 		k := s + (e-s)/2
-		n1 := nums[:k]
-		fmt.Println("k", k)
-		fmt.Println("n1", n1)
-		if sum(n1)%2 == 1 {
-			e = k
+		fmt.Println("sek", s, e, k)
+		if nums[k] != nums[k-1] && nums[k] != nums[k+1] {
+			return nums[k]
 		}
-		if sum(n1)%2 == 0 {
+		fmt.Println(nums[:k])
+		if nums[k] == nums[k-1] {
+			if len(nums[:k])%2 == 0 {
+				e = k
+			}
+		}
+		if nums[k] == nums[k+1] {
 			s = k
 		}
-		fmt.Println("se", s, e)
 	}
 	return nums[e]
 }
