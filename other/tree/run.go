@@ -26,30 +26,26 @@ func run() {
 	fmt.Println(a)
 }
 
-func rt(t *Tree) []int {
-	if t == nil {
-		return nil
-	}
-	a := make([]int, 0)
-	tmp := make([]*Tree, 0)
-	var tmpRoot *Tree
-	for t != nil || len(tmp) > 0 {
-		for t != nil {
-			tmp = append(tmp, t.Left)
-			t = t.Left
+func rt(root *Tree) []int {
+	var a []int
+	stk := []*Tree{}
+	var prev *Tree
+	for root != nil || len(stk) > 0 {
+		for root != nil {
+			stk = append(stk, root)
+			root = root.Left
 		}
-		t = tmp[len(tmp)-1]
-		tmp = tmp[:len(tmp)-1]
-		if t.Right == nil || t.Right == tmpRoot {
-			a = append(a, t.Val)
-			tmpRoot = t
-			t = nil
+		root = stk[len(stk)-1]
+		stk = stk[:len(stk)-1]
+		if root.Right == nil || root.Right == prev {
+			a = append(a, root.Val)
+			prev = root
+			root = nil
 		} else {
-			tmp = append(tmp, t)
-			t = t.Right
+			stk = append(stk, root)
+			root = root.Right
 		}
 	}
-
 	return a
 }
 
