@@ -62,16 +62,12 @@ func linkq(l *link) bool {
 	a := l
 	b := l
 
-	for b != nil {
-		b = b.Next
-		break
-	}
-	for b != nil {
+	for b.Next != nil && b.Next.Next != nil {
 		if a == b {
 			return true
 		}
 		a = a.Next
-		b = b.Next
+		b = b.Next.Next
 	}
 	return false
 }
