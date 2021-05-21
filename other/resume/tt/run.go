@@ -56,3 +56,17 @@ func sum(nums []int) int {
 	}
 	return s
 }
+
+func funcf() {
+	var flist []func()
+	for i := 0; i < 3; i++ {
+		i = i
+		flist = append(flist, func() {
+			fmt.Printf("%p", &i)
+			println(i)
+		})
+	}
+	for i := 0; i < 3; i++ {
+		flist[i]()
+	}
+}
